@@ -1,0 +1,97 @@
+POST http://localhost:8082/pet
+Content-Type: application/json
+
+{
+
+  "category": {
+
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+
+      "name": "str"
+    },
+    {
+
+      "name": "s"
+    }
+  ],
+
+  "status": "available"
+}
+
+###
+
+PUT http://localhost:8082/pet
+Content-Type: application/json
+
+{
+
+  "category": {
+
+    "name": "string2"
+  },
+  "name": "doggie2",
+  "photoUrls": [
+    "string2"
+  ],
+  "tags": [
+    {
+
+      "name": "string2"
+    },
+    {
+
+      "name": "str2"
+    }
+  ],
+
+  "status": "available"
+}
+
+###
+
+GET http://localhost:8082/pet/findByStatus?status=available
+Content-Type: application/json
+
+###
+
+GET http://localhost:8082/pet/0
+Content-Type: application/json
+
+###
+
+POST http://localhost:8082/pet/1
+Content-Type: application/json
+
+{
+  "name": "bobik",
+  "status": "sold"
+}
+
+###
+
+DELETE http://localhost:8082/pet/2
+Content-Type: application/json
+
+###
+
+
+POST http://localhost:8081/store/order
+Content-Type: application/json
+
+{
+  "id": 0,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2020-07-14T13:28:01.814Z",
+  "status": "placed",
+  "complete": true
+}
+
+###
