@@ -20,8 +20,6 @@ public class PetService {
     private final TagsRepository tagsRepository;
 
     public void addPet(Pet pet){
-        categoryRepository.save(pet.getCategory());
-        tagsRepository.saveAll(pet.getTags());
         petRepository.save(pet);
     }
 
@@ -42,15 +40,12 @@ public class PetService {
     }
 
     public void updatePet(Pet pet, int id) {
-//          petRepository.updatePet(pet, id);
         Pet byId = petRepository.findById(id);
         byId.setName(pet.getName());
         byId.setCategory(pet.getCategory());
         byId.setStatus(pet.getStatus());
         byId.setTags(pet.getTags());
-        byId.setId(pet.getId());
-        categoryRepository.save(byId.getCategory());
-        tagsRepository.saveAll(byId.getTags());
+        byId.setId(id);
         petRepository.save(byId);
     }
 }

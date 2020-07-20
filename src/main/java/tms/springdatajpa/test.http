@@ -1,72 +1,53 @@
-POST http://localhost:8082/pet
+POST http://localhost:8080/pet
 Content-Type: application/json
 
 {
-
   "category": {
-
-    "name": "string"
+    "id": 2
   },
-  "name": "doggie",
-  "photoUrls": [
-    "string"
-  ],
   "tags": [
     {
-
-      "name": "str"
+      "id": 2
     },
     {
-
-      "name": "s"
+      "id": 3
     }
   ],
-
+  "name": "doggie",
   "status": "available"
 }
 
 ###
 
-PUT http://localhost:8082/pet
+PUT http://localhost:8080/pet
 Content-Type: application/json
 
 {
-
   "category": {
-
-    "name": "string2"
+    "id": 3
   },
   "name": "doggie2",
-  "photoUrls": [
-    "string2"
-  ],
-  "tags": [
+   "tags": [
     {
-
-      "name": "string2"
-    },
-    {
-
-      "name": "str2"
+      "id": 1
     }
   ],
-
   "status": "available"
 }
 
 ###
 
-GET http://localhost:8082/pet/findByStatus?status=available
+GET http://localhost:8080/pet/findByStatus?status=available
 Content-Type: application/json
 
 ###
 
-GET http://localhost:8082/pet/0
+GET http://localhost:8080/pet/lk
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8082/pet/1
+POST http://localhost:8080/pet/1
 Content-Type: application/json
 
 {
@@ -76,11 +57,10 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8082/pet/2
+DELETE http://localhost:8080/pet/2
 Content-Type: application/json
 
 ###
-
 
 POST http://localhost:8081/store/order
 Content-Type: application/json
@@ -95,3 +75,36 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:8080/user/createWithList
+Content-Type: application/json
+
+  {
+    "userName": "Dod",
+    "firstName": "string",
+    "lastName": "string",
+    "email": "string",
+    "password": "string",
+    "phone": "string",
+    "userStatus": 0
+  }
+
+###
+
+GET http://localhost:8080/user/login?password=string&userName=Dod
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/user/Dod
+Content-Type: application/json
+token:f0ad3b38-e99f-4b6c-abd4-82e8cc40fc85
+
+###
+
+
+
+
+
+
+

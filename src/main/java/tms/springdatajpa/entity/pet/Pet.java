@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
@@ -21,12 +22,12 @@ public class Pet {
     private Category Category;
 
     private String name;
-    @OneToMany
+
+    @ManyToMany
     private List <Tags> tags;
 
     @Enumerated(EnumType.STRING)
     private Status status;
-
 
 
 }
